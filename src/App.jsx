@@ -1,11 +1,13 @@
-import React from 'react';
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 
-const App = () => {
+function App() {
   return (
-    <div>
-      hey there, this is a test for the react app. I am trying to see if it works. I hope it does!
-    </div>
+    <>
+      <Navbar />
+      <Hero />
+    </>
   );
-};
+}
 
 export default App;
