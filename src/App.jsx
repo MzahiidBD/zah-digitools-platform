@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Stats from "./components/Stats";
 import MainSection from "./components/MainSection";
+import StepsSection from "./components/StepsSection";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -13,10 +14,9 @@ function App() {
       <Hero />
       <Stats />
       <MainSection cart={cart} setCart={setCart} />
+      <StepsSection />
     </div>
   );
 }
 
 export default App;
-
-
