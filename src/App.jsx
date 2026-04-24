@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Stats from "./components/Stats";
@@ -15,13 +18,17 @@ function App() {
       <Navbar cart={cart} />
       <Hero />
       <Stats />
+
       <MainSection 
         cart={cart} 
         setCart={setCart} 
       />
+
       <StepsSection />
       <PricingSection />
       <Footer />
+      
+      <ToastContainer position="top-right" autoClose={2000} />
     </div>
   );
 }

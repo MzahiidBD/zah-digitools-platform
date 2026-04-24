@@ -1,28 +1,36 @@
-
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import products from "../data/products";
 
 const MainSection = ({ cart, setCart }) => {
   const [activeTab, setActiveTab] = useState("products");
 
-  // Add to cart
+  // ✅ Add to cart
   const addToCart = (product) => {
     const exist = cart.find((item) => item.id === product.id);
 
     if (!exist) {
       setCart([...cart, product]);
+      toast.success(`${product.name} added to cart 🛒`);
+    } else {
+      toast.info(`${product.name} already in cart`);
     }
   };
 
-  // Remove from cart
+  // ✅ Remove from cart
   const removeFromCart = (id) => {
+    const removedItem = cart.find((item) => item.id === id);
+
     const updated = cart.filter((item) => item.id !== id);
     setCart(updated);
+
+    toast.error(`${removedItem?.name} removed ❌`);
   };
 
-  // Clear cart
+  // ✅ Checkout (clear cart)
   const clearCart = () => {
     setCart([]);
+    toast.info("Proceeding to checkout 💳");
   };
 
   // Total price
@@ -72,7 +80,7 @@ const MainSection = ({ cart, setCart }) => {
           </div>
         </div>
 
-        {/* PRODUCTS SECTION */}
+        {/* PRODUCTS */}
         {activeTab === "products" && (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((item) => {
@@ -84,11 +92,7 @@ const MainSection = ({ cart, setCart }) => {
                   className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition"
                 >
                   <div className="flex justify-between items-center mb-4">
-                    <img
-                      src={item.icon}
-                      className="w-12 h-12"
-                      alt="icon"
-                    />
+                    <img src={item.icon} className="w-12 h-12" alt="icon" />
 
                     <span className={`px-3 py-1 text-sm rounded-full ${item.tagType}`}>
                       {item.tag}
@@ -127,14 +131,13 @@ const MainSection = ({ cart, setCart }) => {
           </div>
         )}
 
-        {/* CART SECTION */}
+        {/* CART */}
         {activeTab === "cart" && (
           <div className="bg-white p-8 rounded-2xl shadow max-w-4xl mx-auto">
 
             {cart.length === 0 ? (
               <div className="text-center py-10">
                 <div className="text-6xl mb-4">🛒</div>
-
                 <p className="text-gray-500 text-lg">
                   Cart is empty 😢
                 </p>
@@ -147,11 +150,7 @@ const MainSection = ({ cart, setCart }) => {
                     className="flex justify-between items-center border-b py-4"
                   >
                     <div className="flex items-center gap-3">
-                      <img
-                        src={item.icon}
-                        className="w-10 h-10"
-                        alt="product"
-                      />
+                      <img src={item.icon} className="w-10 h-10" alt="product" />
 
                       <div>
                         <h4 className="font-semibold">{item.name}</h4>
