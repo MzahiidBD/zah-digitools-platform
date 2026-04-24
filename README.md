@@ -1,16 +1,36 @@
-# React + Vite
+🚀 Digital Tools Buying Website
+📌 Project Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Digital Tools Buying Website is a modern and responsive web application where users can explore, select, and purchase premium digital products such as AI tools, design assets, and productivity resources.
+The platform is designed with a clean UI and smooth user experience to make digital shopping fast and efficient.
 
-Currently, two official plugins are available:
+✨ Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project allows users to browse a curated collection of digital tools and easily add them to a cart. It provides real-time feedback using toast notifications and ensures a seamless checkout experience. The interface is fully responsive, making it accessible across mobile, tablet, and desktop devices.
 
-## React Compiler
+🛠️ Technologies Used
+⚛️ React.js
+🎨 Tailwind CSS
+💻 JavaScript (ES6+)
+🔔 React-Toastify (NPM Package)
+📦 JSON (for product data)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🌟 Key Features
+🛒 1. Add to Cart System
 
-## Expanding the ESLint configuration
+Users can easily add products to the cart with instant visual feedback and smart duplicate prevention.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🔔 2. Smart Notifications
+
+Interactive toast notifications for:
+
+Adding products
+Removing products
+Checkout actions
+📱 3. Fully Responsive Design
+
+Optimized for all devices:
+
+Mobile 📱
+Tablet 📲
+Desktop 💻
